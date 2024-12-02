@@ -5,9 +5,12 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "./redux/counter/counter.slide";
 import { decrease } from "./redux/counter/counter.slide";
+import { useAppDispatch, useAppSelector } from "./redux/hook";
 function App() {
-  const dispatch = useDispatch();
-  const count = useSelector((state: any) => state.counter.value);
+  // const dispatch = useDispatch();
+  // const count = useSelector((state: any) => state.counter.value);
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatchh();
   console.log("Check count==", count);
   return (
     <>
